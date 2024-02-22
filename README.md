@@ -85,7 +85,7 @@ For plots and more data analysis, you can view the [complete documentation](http
 
 I used RandomForestClassifier with 100 estimators from sklearn.ensemble. The results consist in a classification report (accuracy, precision, recall, f1 score) and a confusion matrix.
 
-For 2-label classification:
+- For 2-label classification:
 
 <tr><td>
 
@@ -98,7 +98,9 @@ For 2-label classification:
 |-------|-----------|
 | 0.77 | 0.66 |   
 
-For 4-label classification:
+![Conf matrix 2 labels](https://github.com/NacuAndrei/Revenue-predictor/blob/master/Pipeline%20%26%20Statistics/ConfMatrix_RandomForest_2label.png)
+
+- For 4-label classification:
 
 | Label | Precision | Recall | F1 score |  
 |-------|-----------|--------|----------|  
@@ -111,6 +113,7 @@ For 4-label classification:
 |-------|-----------|
 | 0.53 | 0.50 |   
 
+![Conf matrix 4 labels](https://github.com/NacuAndrei/Revenue-predictor/blob/master/Pipeline%20%26%20Statistics/ConfMatrix_RandomForest_4labels.png)
 
 
 
