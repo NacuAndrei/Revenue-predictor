@@ -81,6 +81,29 @@ For plots and more data analysis, you can view the [complete documentation](http
 
 ## 5.1 Whole results
 
+Clustering results:
+
+| Clustering Model | Silhouette Score |
+| -- | -- |
+| K-means two labels | 0.618 | 
+| K-means four kabels | 0.590|
+| DBSCAN two labels | 0.194 |
+| DBSCAN four labels | 0.111 |
+
+Classification results:
+
+| Classification model | Macro F1 score | Precision class 1 | Recall class 1 | Precision class 2 | Recall class 2 |
+|--|--|--|--|--|--|
+| Random Forest | 0.66 | 0.73 | 0.34 | 0.78 | 0.95 |
+| SVM | 0.56 | 0.35 | 0.44 | 0.75 | 0.68 |
+| XGBoost | 0.66 | 0.56 | 0.47 | 0.80 | 0.68 |
+| KNN | 0.57 | 0.39 | 0.36 | 0.75 | 0.77 |
+| Ridge Classifier | 0.55 | 0.35 | 0.5 | 0.76 | 0.62 |
+| CNB | 0.53 | 0.33 | 0.44 | 0.74 | 0.64 |
+| MLP | 0.64 | 0.51 | 0.43 | 0.78 | 0.83 |
+
+For complete results, plots and results analysis, see the [complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf).
+
 ## 5.2 My results from Random Forest classifier
 
 I used RandomForestClassifier with 100 estimators from sklearn.ensemble. The results consist in a classification report (accuracy, precision, recall, f1 score) and a confusion matrix.
@@ -114,6 +137,20 @@ I used RandomForestClassifier with 100 estimators from sklearn.ensemble. The res
 | 0.53 | 0.50 |   
 
 ![Conf matrix 4 labels](https://github.com/NacuAndrei/Revenue-predictor/blob/master/Pipeline%20%26%20Statistics/ConfMatrix_RandomForest_4labels.png)
+
+For complete results, plots and results analysis, see the [complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf).
+
+# 6. conclusion
+
+We have seen in the Results section that the models chosen tend to perform better in certain situations, but overall, K-Means gave us the best clustering, Random Forest, XGBoost and MLP had the highest F1 score, for classification, and in terms of regression, the two models’ performance is different, for each cluster. 
+
+After analyzing the features in this dataset, we noticed that most of them have a rather low relevance to the revenue. This low correlation might also suggest that the data could be misleading or noisy.
+
+Furthermore, we found out that working with a very large range of numbers, in this case from $7000 up to $780,000,000,000, is very unstable for most models, resulting in poor results. One solution to counteract
+this issue seems to be to split this range into smaller dense clusters and also to remove anomalies.
+
+# 7. Useful links
+[Complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf)
 
 
 
