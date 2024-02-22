@@ -151,6 +151,7 @@ this issue seems to be to split this range into smaller dense clusters and also 
 
 # 7. Useful links
 [Complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf)
+[My code](https://github.com/NacuAndrei/Revenue-predictor/blob/master/RandomForest_Classification.ipynb)
 
 
 
