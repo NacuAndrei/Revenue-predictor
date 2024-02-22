@@ -140,7 +140,7 @@ I used RandomForestClassifier with 100 estimators from sklearn.ensemble. The res
 
 For complete results, plots and results analysis, see the [complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf).
 
-# 6. conclusion
+# 6. Conclusion
 
 We have seen in the Results section that the models chosen tend to perform better in certain situations, but overall, K-Means gave us the best clustering, Random Forest, XGBoost and MLP had the highest F1 score, for classification, and in terms of regression, the two models’ performance is different, for each cluster. 
 
@@ -151,6 +151,7 @@ this issue seems to be to split this range into smaller dense clusters and also 
 
 # 7. Useful links
 [Complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf)
+
 [My code](https://github.com/NacuAndrei/Revenue-predictor/blob/master/RandomForest_Classification.ipynb)
 
 
