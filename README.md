@@ -40,6 +40,8 @@ Numerical values, excluding those encoded with the transformer, underwent normal
 confined within the range of 0 to 1.
 
 # 3. Implementation
+
+## 3.1 The whole process
 Beginning with data collection, we extract real-time and historical information from the Veridion API.
 Subsequently, a carefully designed processing pipeline involves filtering and preprocessing to refine the data for meaningful analysis.
 
@@ -52,7 +54,62 @@ companies to predefined revenue ranges. This classification step enhances the pr
 In the final phase, precise regression models are applied to each revenue range, providing detailed and
 accurate revenue predictions. This report outlines our modest yet effective approach, emphasizing the systematic nature of our pipeline.
 
+The pipeline can be viewed [here](https://github.com/NacuAndrei/Revenue-predictor/blob/master/Pipeline%20%26%20Statistics/ProjectPipeline.png).
 
+## 3.2 My part - Random Forest classifier
+
+After the dataset was split into 2, respectively 4 clusters by KNN, the target for my Random Forest algorithm was to predict those newly assigned clusters.
+
+For data preparation, I decided to drop the outliers - the data that did not belong to any cluster (2-4k examples out of 50k). Some features were irrelevant for the dataset, columns such as "long_description" or "business_tags" were dropped. Other features consisted in short lists that were a result of encodation. I kept those values by taking the mean, keeping the first value only, or calculating the mean by exluding null values. The method that I applied depended on the content of those lists.
+
+After analyzing the feature importance, those labels that I decided to keep turned out to be taken into consideration by the model. You can view some plots and further information about my part in the [complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf).
+
+# 4. Statistics
+
+Most important observations:
+- Most companies are from the US and Europe;
+- California, Texas, New York and Florida account for a large number of companies;
+- There are some companies which have a huge revenue compared to the majority of companies in the dataset;
+- Most companies are recently founded (last 50 years);
+- There are a lot of companies with less than 10 employees;
+- Coordinates are very important for revenue prediction;
+- As a conclusion, dataset is unbalanced.
+
+For plots and more data analysis, you can view the [complete documentation](https://github.com/NacuAndrei/Revenue-predictor/blob/master/FullDocumentation.pdf).
+
+# 5. Results
+
+## 5.1 Whole results
+
+## 5.2 My results from Random Forest classifier
+
+I used RandomForestClassifier with 100 estimators from sklearn.ensemble. The results consist in a classification report (accuracy, precision, recall, f1 score) and a confusion matrix.
+
+For 2-label classification:
+
+<tr><td>
+
+| Label | Precision | Recall | F1 score |  
+|-------|-----------|--------|----------|  
+| 1.0 | 0.73 | 0.34 | 0.46 |                
+| 2.0 | 0.78 | 0.95 | 0.86 | 
+  
+| Accuracy | Macro F1 score |
+|-------|-----------|
+| 0.77 | 0.66 |   
+
+For 4-label classification:
+
+| Label | Precision | Recall | F1 score |  
+|-------|-----------|--------|----------|  
+| 1.0 | 0.52 | 0.41 | 0.46 |
+| 2.0 | 0.47 | 0.62 | 0.53 |
+| 3.0 | 0.58 | 0.64 | 0.60 |
+| 4.0 | 0.62 | 0.31 | 0.41 |
+
+| Accuracy | Macro F1 score |
+|-------|-----------|
+| 0.53 | 0.50 |   
 
 
 
